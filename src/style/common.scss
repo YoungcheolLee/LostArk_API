@@ -1,0 +1,13 @@
+.newsList {
+    // background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    .newsItem{
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
