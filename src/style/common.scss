@@ -4,8 +4,13 @@
     display: center;
 }
 
-.header {
+header {    
+    h1:hover {
+        cursor: pointer;
+    }
+    
     display: flex;
+    flex-direction: column;
     margin-left: 21px;
 }
 
@@ -21,4 +26,10 @@
         flex-direction: column;
         gap: 16px;
     }
+}
+
+.characterList{
+    width: 94%;
+    list-style: none;
+    text-align: left;
 }
