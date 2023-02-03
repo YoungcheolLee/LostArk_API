@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { NewsInfo } from "../interfaces";
 
 export const HomePage = () => {
-  const [newsData, setNewsData] = useState<any>([]);
+  const [newsData, setNewsData] = useState<NewsInfo[]>([]);
 
   const fetchNews = async () => {
     const newsResponse = await axios.get(
@@ -14,7 +15,7 @@ export const HomePage = () => {
         },
       }
     );
-    console.log(newsResponse);
+    console.log("newsData", newsResponse);
 
     const lostarkData = newsResponse.data;
     setNewsData(lostarkData);
@@ -26,7 +27,7 @@ export const HomePage = () => {
 
   return (
     <div className="newsList">
-      {newsData.map((item: any, idx: any) => (
+      {newsData.map((item, idx: number) => (
         <div key={idx} className="newsItem">
           <h4>{item.Title}</h4>
           <a target="_blank" rel="noreferrer" href={item.Link}>

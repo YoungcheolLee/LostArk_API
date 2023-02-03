@@ -12,10 +12,10 @@ export const CharacterPage = () => {
             <ul key={idx} className="characterList">
               <hr />
               <li>Server: {item.ServerName}</li>
+              <li>Class: {item.CharacterClassName}</li>
               <li>ID: {item.CharacterName}</li>
-              <li>Server: {item.CharacterClassName}</li>
+              <li>ItemLv: {item.ItemAvgLevel}</li>
               <li>CharacterLV: {item.CharacterLevel}</li>
-              <li>CharacterLV: {item.ItemAvgLevel}</li>
               <hr />
             </ul>
           ))

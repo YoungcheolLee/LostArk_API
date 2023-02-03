@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
@@ -8,6 +8,12 @@ export const Header = () => {
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     return setCharacterName(e.target.value);
+  };
+
+  const handleInputEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
 
   const handleSearch = async () => {
@@ -42,6 +48,7 @@ export const Header = () => {
           type="search"
           value={characterName}
           onChange={handleSearchChange}
+          onKeyDown={handleInputEnter}
         />
         <button onClick={handleSearch}>검색</button>
       </div>
