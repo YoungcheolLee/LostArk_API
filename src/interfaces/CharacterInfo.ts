@@ -6,4 +6,3 @@ export interface CharacterInfo {
     ItemMaxLevel: string;
     ServerName: string;
 }
-

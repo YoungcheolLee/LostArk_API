@@ -27,10 +27,12 @@ export const Header = () => {
       }
     );
 
+    console.log("characterResponse", characterResonse);
+
     const chracterInfomation = characterResonse.data;
     console.log("characterInfo", chracterInfomation);
 
-    navigate("/character", {
+    navigate("/character-list", {
       state: chracterInfomation,
     });
   };

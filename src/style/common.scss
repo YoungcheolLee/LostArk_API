@@ -28,8 +28,25 @@ header {
     }
 }
 
-.characterList{
-    width: 94%;
-    list-style: none;
-    text-align: left;
+.character-list-wrapper {
+    h1 {
+        text-align: center;
+    }
+
+    .character-item:hover {
+        cursor:pointer;
+    }
+    
+    .character-item {
+        margin:auto;
+        text-align: center;
+        list-style: none;
+        width: 50%;
+    }
 }
+// .characterList {
+//     width: 94%;
+//     list-style: none;
+//     text-align: left;
+    
+// }
