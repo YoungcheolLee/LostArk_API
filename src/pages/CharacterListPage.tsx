@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { CharacterInfo } from "../interfaces";
 
@@ -6,17 +7,21 @@ export const CharacterListPage = () => {
   const data: Array<CharacterInfo> = location.state;
   const navigate = useNavigate();
 
+  console.log("data", data);
+
   const handleNavigateInfo = () => {
-    return navigate("/character-info");
+    navigate(`/character-info:/${data}`, {
+      state: data,
+    });
   };
 
   return (
     <div className="character-list-wrapper">
       <h1>CharacterList</h1>
       {data
-        ? data.map((item, idx: number) => (
+        ? data.map((item) => (
             <ul
-              key={idx}
+              key={item.CharacterName}
               className="character-item"
               onClick={handleNavigateInfo}
             >
