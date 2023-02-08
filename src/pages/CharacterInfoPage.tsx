@@ -1,17 +1,14 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { CharacterInfo } from "../interfaces";
 
 export const CharacterInfoPage = () => {
-  const location = useLocation();
-  const characterInfoData: Array<CharacterInfo[]> = location.state;
+  const { characterName } = useParams();
 
-  console.log("characterInfoData", characterInfoData);
-
-  const characterDetatilInfo = async () => {
-    const detatilInfo = await axios.get(
-      `https://developer-lostark.game.onstove.com/armories/characters/${characterInfoData}/profiles`,
+  const characterDetailInfo = async () => {
+    const detailInfo = await axios.get(
+      `https://developer-lostark.game.onstove.com/armories/characters/${characterName}/profiles`,
       {
         headers: {
           accept: "application/json",
@@ -20,12 +17,11 @@ export const CharacterInfoPage = () => {
       }
     );
 
-    console.log("detatilInfo", detatilInfo);
+    console.log("detailInfo", detailInfo);
+    return detailInfo;
   };
 
-  useEffect(() => {
-    characterDetatilInfo();
-  }, []);
+  console.log(characterDetailInfo());
 
-  return <div>this is detailinfo page</div>;
+  return <div>this is {characterName} detailinfo page</div>;
 };

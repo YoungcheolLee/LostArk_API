@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { CharacterInfo } from "../interfaces";
 
@@ -9,10 +8,8 @@ export const CharacterListPage = () => {
 
   console.log("data", data);
 
-  const handleNavigateInfo = () => {
-    navigate(`/character-info:/${data}`, {
-      state: data,
-    });
+  const handleNavigateInfo = (characterName: string) => {
+    navigate(`/character-info/${characterName}`);
   };
 
   return (
@@ -23,7 +20,7 @@ export const CharacterListPage = () => {
             <ul
               key={item.CharacterName}
               className="character-item"
-              onClick={handleNavigateInfo}
+              onClick={() => handleNavigateInfo(item.CharacterName)}
             >
               <hr />
               <li>Server: {item.ServerName}</li>

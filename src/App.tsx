@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/character-list" element={<CharacterListPage />} />
         <Route
-          path="/character-info:/characterName"
+          path="/character-info/:characterName"
           element={<CharacterInfoPage />}
         />
       </Routes>
