@@ -1,29 +1,34 @@
 export interface CharacterDetailInfo {
-    CharacterClassName: string;
     CharacterImage: string;
-    CharacterLevel: number;
-    CharacterName: string;
     ExpeditionLevel: number;
-    GuildMemberGrade: string;
-    GuildName: string;
-    ItemAvgLevel: string;
-    ItemMaxLevel: string;
     PvpGradeName: string;
-    ServerName: string;
-    Stats: {
-        Tooltip: string;
-        Type: string;
-        Value: number;
-    };
-    Tendencies: {
-        MaxPoint: number;
-        Point: number;
-        Type: string;
-    }
-    Title: string;
-    TotalSkillPoint: number;
     TownLevel: number;
     TownName: string;
+    Title: string;
+    GuildMemberGrade: string;
+    GuildName: string;
     UsingSkillPoint: number;
-}
-
+    TotalSkillPoint: number;
+    Stats: [
+      {
+        Type: string;
+        Value: string;
+        Tooltip: [
+          string,
+        ]
+      }
+    ],
+    Tendencies: [
+      {
+        Type: string;
+        Point: number;
+        MaxPoint: number;
+      }
+    ],
+    ServerName: string;
+    CharacterName: string;
+    CharacterLevel: string;
+    CharacterClassName: string;
+    ItemAvgLevel: string;
+    ItemMaxLevel: string;
+  }

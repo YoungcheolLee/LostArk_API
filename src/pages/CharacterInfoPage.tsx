@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { CharacterInfo } from "../interfaces";
+import { CharacterDetailInfo } from "../interfaces/CharacterDetailInfo";
 
 export const CharacterInfoPage = () => {
-  const [detailInfoData, setDetailInfoData] = useState<CharacterInfo[]>([]);
   const { characterName } = useParams();
 
   const characterDetailInfo = async () => {
@@ -18,24 +17,14 @@ export const CharacterInfoPage = () => {
       }
     );
 
+    console.log("detailInfo", detailInfo);
     const data = detailInfo.data;
     console.log("data", data);
-
-    setDetailInfoData(data);
   };
 
   useEffect(() => {
     characterDetailInfo();
   });
 
-  console.log(characterDetailInfo());
-
-  return (
-    <div>
-      <span>this is {characterName} detailinfo page</span>
-      {detailInfoData.map((item, idx: number) => {
-        return <div key={idx}>{item.CharacterClassName}</div>;
-      })}
-    </div>
-  );
+  return <span>this is {characterName} detailinfo page</span>;
 };
