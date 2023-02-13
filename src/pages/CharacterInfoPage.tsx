@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import { CharacterDetailInfo } from "../interfaces/CharacterDetailInfo";
 
 export const CharacterInfoPage = () => {
-  const { characterName } = useParams();
+  const [characterInfo, setCharacterInfo] = useState<CharacterDetailInfo[]>([]);
+  const { characterName } = useParams<string>();
 
   const characterDetailInfo = async () => {
     const detailInfo = await axios.get(
@@ -17,14 +18,22 @@ export const CharacterInfoPage = () => {
       }
     );
 
-    console.log("detailInfo", detailInfo);
+    console.log("characterDetailInfo", detailInfo);
     const data = detailInfo.data;
     console.log("data", data);
+    setCharacterInfo(data);
   };
 
   useEffect(() => {
     characterDetailInfo();
   });
 
-  return <span>this is {characterName} detailinfo page</span>;
+  return (
+    <div>
+      <span>{characterName} deatil infomation page</span>
+      {/* {characterInfo.map((item, idx) => {
+        <div>{item.CharacterClassName}</div>;
+      })} */}
+    </div>
+  );
 };
