@@ -9,22 +9,6 @@ export interface CharacterDetailInfo {
     GuildName: string;
     UsingSkillPoint: number;
     TotalSkillPoint: number;
-    Stats: [
-      {
-        Type: string;
-        Value: string;
-        Tooltip: [
-          string,
-        ]
-      }
-    ],
-    Tendencies: [
-      {
-        Type: string;
-        Point: number;
-        MaxPoint: number;
-      }
-    ],
     ServerName: string;
     CharacterName: string;
     CharacterLevel: string;

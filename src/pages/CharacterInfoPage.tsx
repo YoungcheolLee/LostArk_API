@@ -18,9 +18,9 @@ export const CharacterInfoPage = () => {
       }
     );
 
-    console.log("characterDetailInfo", detailInfo);
+    console.log("DetailInfo", detailInfo);
     const data = detailInfo.data;
-    console.log("data", data);
+
     setCharacterInfo(data);
   };
 
@@ -31,9 +31,6 @@ export const CharacterInfoPage = () => {
   return (
     <div>
       <span>{characterName} deatil infomation page</span>
-      {/* {characterInfo.map((item, idx) => {
-        <div>{item.CharacterClassName}</div>;
-      })} */}
     </div>
   );
 };
