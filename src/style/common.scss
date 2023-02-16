@@ -1,52 +1,81 @@
 .search {
-    height: 49px;
-    margin-bottom: 16px;
-    display: center;
+  height: 49px;
+  margin-bottom: 16px;
+  display: center;
 }
 
-header {    
-    h1:hover {
-        cursor: pointer;
-    }
-    
-    display: flex;
-    flex-direction: column;
-    margin-left: 21px;
+header {
+  h1:hover {
+    cursor: pointer;
+  }
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 21px;
 }
 
 .newsList {
-    // background-color: blue;
+  // background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  .newsItem {
+    margin-bottom: 16px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
-    .newsItem{
-        margin-bottom: 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 .character-list-wrapper {
-    h1 {
-        text-align: center;
-    }
+  h1 {
+    text-align: center;
+  }
 
-    .character-item:hover {
-        cursor:pointer;
-    }
-    
-    .character-item {
-        margin:auto;
-        text-align: center;
-        list-style: none;
-        width: 50%;
-    }
+  .character-item:hover {
+    cursor: pointer;
+  }
+
+  .character-item {
+    margin: auto;
+    text-align: center;
+    list-style: none;
+    width: 50%;
+  }
 }
-// .characterList {
-//     width: 94%;
-//     list-style: none;
-//     text-align: left;
-    
-// }
+
+.character-detailInfo-wrapper {
+  //   border: 5px solid;
+  margin-left: 4%;
+  width: 80%;
+  display: inline-block;
+
+  .left-sort {
+    // border: 1px solid;
+    // background-color: yellow;
+    width: 50%;
+    height: 74vh;
+    margin: 1%;
+    float: left;
+  }
+
+  .character-detailInfoTable {
+    width: 100%;
+    height: 73vh;
+    th {
+      border: 1px solid;
+    }
+    td {
+      border: 1px solid;
+    }
+  }
+
+  .right-sort {
+    // background-color: blue;
+    // border: 1px red solid;
+    float: right;
+    width: 46%;
+    margin-right: 1%;
+  }
+}
