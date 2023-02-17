@@ -71,6 +71,14 @@ export const CharacterInfoPage = () => {
               <th>PVP</th>
               <td>{characterInfo?.PvpGradeName}</td>
             </tr>
+            <tr>
+              <th>스킬포인트</th>
+              <td>{characterInfo?.TotalSkillPoint}</td>
+            </tr>
+            <tr>
+              <th>사용중인포인트</th>
+              <td>{characterInfo?.UsingSkillPoint}</td>
+            </tr>
           </thead>
         </table>
       </div>
