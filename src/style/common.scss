@@ -9,13 +9,14 @@ header {
     cursor: pointer;
   }
 
+  background-color: #e9ec69;
+
   display: flex;
   flex-direction: column;
-  margin-left: 21px;
 }
 
 .newsList {
-  // background-color: blue;
+  background-color: #8977ad;
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
@@ -30,6 +31,7 @@ header {
 
 .character-list-wrapper {
   h1 {
+    background-color: #d3d3d3;
     text-align: center;
   }
 

@@ -76,7 +76,7 @@ export const CharacterInfoPage = () => {
               <td>{characterInfo?.TotalSkillPoint}</td>
             </tr>
             <tr>
-              <th>사용중인포인트</th>
+              <th>사용중인스킬포인트</th>
               <td>{characterInfo?.UsingSkillPoint}</td>
             </tr>
           </thead>

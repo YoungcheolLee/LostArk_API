@@ -29,11 +29,11 @@ export const HomePage = () => {
     <div className="newsList">
       {newsData.map((item, idx: number) => (
         <div key={idx} className="newsItem">
-          <h4>{item.Title}</h4>
+          <h2>{item.Title}</h2>
           <a target="_blank" rel="noreferrer" href={item.Link}>
             <img src={item.Thumbnail} alt="thumbnail" />
           </a>
-          {item.StartDate} ~ {item.EndDate}
+          이벤트 기간: {item.StartDate} ~ {item.EndDate}
         </div>
       ))}
     </div>
